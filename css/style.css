@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../assets/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: MiFuente, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-background-navbar: #304A63;
+    --color-font-navbar: #C0D0EF;
+}
+
+ul {
+    display: flex;
+    gap: 1%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: var(--color-background-navbar);
+    color: var(--color-font-navbar);
+    display: flex;
+    position: fixed;
+    height: 7dvh;
+    min-height: 50px;
+    width: 100%;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        height: 4dvh;
+        min-height: 30px;
+        border-radius: 50%;
+    }
+}
+
+#Inicio {
+    height: 50dvh;
+    width: 100%;
+    padding: max(8dvh, 60px) 10dvw 0 10dvw;
+    
+    h2 {
+        padding-bottom: 5dvh;
+    }
+
+    div {
+        display: flex;
+        gap: 10dvw;
+    }
+}
+
+#Habilidades {
+    height: 50dvh;
+    width: 100%;
+    padding: max(8dvh, 60px) 10dvw 0 10dvw;
+}
+
+#Proyectos {
+    height: 100dvh;
+    width: 100%;
+    padding: max(8dvh, 60px) 10dvw 0 10dvw;
+}
+
+footer {
+    background-color: var(--color-background-navbar);
+    color: var(--color-font-navbar);
+    display: flex;
+    height: 7dvh;
+    min-height: 50px;
+    width: 100%;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: center;
+}
