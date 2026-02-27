@@ -14,15 +14,24 @@
 :root {
     --color-background-navbar: #304A63;
     --color-font-navbar: #C0D0EF;
+    --color-carrusel: #668DC0;
+    --gris: #C2C6CE;
+    --oscuro: #0F1C30;
 }
 
 ul {
     display: flex;
-    gap: 1%;
+    gap: 20px;
 }
 
 li {
     list-style: none;
+    transition: 300ms;
+
+    &:hover {
+        color: whitesmoke;
+        scale: 120%;
+    }
 }
 
 a {
@@ -31,6 +40,7 @@ a {
 }
 
 header {
+    z-index: 1;
     background-color: var(--color-background-navbar);
     color: var(--color-font-navbar);
     display: flex;
@@ -49,29 +59,83 @@ header {
     }
 }
 
+h2 {
+    padding-bottom: 5dvh;
+    text-decoration: underline;
+}
+
 #Inicio {
-    height: 50dvh;
+    min-height: 50dvh;
     width: 100%;
     padding: max(8dvh, 60px) 10dvw 0 10dvw;
-    
-    h2 {
-        padding-bottom: 5dvh;
-    }
 
     div {
         display: flex;
-        gap: 10dvw;
+        align-items: center;
+        gap: 20%;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
     }
 }
 
 #Habilidades {
-    height: 50dvh;
+    min-height: 50dvh;
     width: 100%;
     padding: max(8dvh, 60px) 10dvw 0 10dvw;
 }
 
+.Carrusel {
+    width: 100%;
+    border-radius: 1%;
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+
+    .Grupo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        animation: spin 25s infinite linear;
+
+        .Tarjeta {
+            flex: 0 0 1em;
+            height: 4em;
+            padding: 1em;
+            background: var(--color-carrusel);
+            font-size: 1rem;
+            border-radius: .2em;
+            text-align: center;
+            align-content: center;
+
+            img {
+                height: 30px;
+                transition: 300ms;
+
+                &:hover {
+                    scale: 130%;
+                }
+            }
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 #Proyectos {
-    height: 100dvh;
+    min-height: 100dvh;
+    width: 100%;
+    padding: max(8dvh, 60px) 10dvw 0 10dvw;
+}
+
+#Experiencia {
+    min-height: 100dvh;
     width: 100%;
     padding: max(8dvh, 60px) 10dvw 0 10dvw;
 }
@@ -86,4 +150,19 @@ footer {
     padding: 0 10%;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 900px) {
+    #Inicio {
+        div {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+    }
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -101%;}
 }
